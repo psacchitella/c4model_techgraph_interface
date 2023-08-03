@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:c4model_techgraph_interface/structurizr.dart';
 
 void main() {
   runApp(const C4ModelInterfaceApp());
