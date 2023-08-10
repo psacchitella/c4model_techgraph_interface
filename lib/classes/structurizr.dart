@@ -3,6 +3,8 @@
 Map<String, dynamic> map = jsonDecode(<myJSONString>);
 var myRootNode = Root.fromJson(map);
 */
+import 'dart:convert';
+
 class ApiType {
   String? id;
   String? apiTypeName;
@@ -15,7 +17,7 @@ class ApiType {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['apiTypeName'] = apiTypeName;
     return data;
@@ -34,7 +36,7 @@ class AppCodeBase {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['appCodeBaseName'] = appCodeBaseName;
     return data;
@@ -70,7 +72,7 @@ class ApplicationFeature {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['dataTables_id'] = dataTablesid;
     data['featureName'] = featureName;
@@ -101,7 +103,7 @@ class ApplicationLead {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['createdAt'] = createdAt;
     data['ste_id'] = steid;
@@ -123,7 +125,7 @@ class AppOperatingSystem {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['appOSName'] = appOSName;
     return data;
@@ -156,7 +158,7 @@ class AppRegion {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['createdAt'] = createdAt;
     data['dataTables_id'] = dataTablesid;
@@ -179,7 +181,7 @@ class AppTypeGroup {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['atgId'] = atgId;
     data['atgName'] = atgName;
     return data;
@@ -237,7 +239,7 @@ class BackendService {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['createdAt'] = createdAt;
     data['dataTables_id'] = dataTablesid;
@@ -257,7 +259,7 @@ class BackendService {
   }
 }
 
-class Class {
+class StructurizrClass {
   List<EntityTag?>? entityTags;
   List<ViewImage?>? viewImages;
   List<Documentation?>? documentation;
@@ -304,7 +306,7 @@ class Class {
   List<StructView?>? structViews;
   List<EntityLU?>? entityLU;
 
-  Class(
+  StructurizrClass(
       {this.entityTags,
       this.viewImages,
       this.documentation,
@@ -351,7 +353,7 @@ class Class {
       this.structViews,
       this.entityLU});
 
-  Class.fromJson(Map<String, dynamic> json) {
+  StructurizrClass.fromJson(Map<String, dynamic> json) {
     if (json['entityTags'] != null) {
       entityTags = <EntityTag>[];
       json['entityTags'].forEach((v) {
@@ -625,7 +627,7 @@ class Class {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['entityTags'] = entityTags != null
         ? entityTags!.map((v) => v?.toJson()).toList()
         : null;
@@ -793,7 +795,7 @@ class ClientApplication {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['createdAt'] = createdAt;
     data['appName'] = appName;
@@ -825,7 +827,7 @@ class ClientAppsVersioning {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['clientApps_id'] = clientAppsid;
     data['versionNumber'] = versionNumber;
@@ -875,7 +877,7 @@ class Component {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['compIdent'] = compIdent;
     data['compName'] = compName;
@@ -932,7 +934,7 @@ class Container {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['contIdent'] = contIdent;
     data['contName'] = contName;
@@ -962,7 +964,7 @@ class ContComponentLU {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['containers_id'] = containersid;
     data['components_id'] = componentsid;
@@ -984,7 +986,7 @@ class Country {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['countryName'] = countryName;
     data['regionID'] = regionID;
@@ -1008,7 +1010,7 @@ class CustomView {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['custIdent'] = custIdent;
     data['custName'] = custName;
@@ -1043,7 +1045,7 @@ class DataTable {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['tableName'] = tableName;
     data['originalOrg'] = originalOrg;
@@ -1068,7 +1070,7 @@ class Deviceapp {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['dModel_id'] = dModelid;
     data['cApps_id'] = cAppsid;
     data['createdAt'] = createdAt;
@@ -1102,7 +1104,7 @@ class DeviceModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['createdAt'] = createdAt;
     data['modelName'] = modelName;
@@ -1125,7 +1127,7 @@ class Documentation {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['documentText'] = documentText;
     return data;
@@ -1146,7 +1148,7 @@ class DocumentImage {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['docURL'] = docURL;
     data['docImageDesc'] = docImageDesc;
@@ -1210,7 +1212,7 @@ class ElementStyle {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['shape'] = shape;
     data['icon'] = icon;
@@ -1243,7 +1245,7 @@ class EngineeringLead {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['fk_pcid'] = fkpcid;
     return data;
@@ -1264,7 +1266,7 @@ class EntityLU {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['model_id'] = modelid;
     data['entity_id'] = entityid;
@@ -1284,7 +1286,7 @@ class EntityTag {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['tagValue'] = tagValue;
     return data;
@@ -1314,7 +1316,7 @@ class Group {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['groupName'] = groupName;
     data['groupTags'] = groupTags;
@@ -1336,7 +1338,7 @@ class Identifier {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['modelIdentifiers'] = modelIdentifiers;
     return data;
@@ -1355,7 +1357,7 @@ class IdentifiersView {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['ident_id'] = identid;
     data['view_id'] = viewid;
     return data;
@@ -1374,7 +1376,7 @@ class IpmOwner {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['fk_pcid'] = fkpcid;
     return data;
@@ -1407,7 +1409,7 @@ class JsonRelation {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['sourceId'] = sourceId;
     data['destinationId'] = destinationId;
@@ -1432,7 +1434,7 @@ class MainOrg {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['techGraphURL'] = techGraphURL;
     data['tableDataObjects_id'] = tableDataObjectsid;
@@ -1452,7 +1454,7 @@ class MarketingRegion {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['region_id'] = regionid;
     data['cApps_id'] = cAppsid;
     return data;
@@ -1460,21 +1462,21 @@ class MarketingRegion {
 }
 
 class Model {
-  List<Class?>? classes;
+  List<StructurizrClass?>? classes;
 
   Model({this.classes});
 
   Model.fromJson(Map<String, dynamic> json) {
     if (json['classes'] != null) {
-      classes = <Class>[];
+      classes = <StructurizrClass>[];
       json['classes'].forEach((v) {
-        classes!.add(Class.fromJson(v));
+        classes!.add(StructurizrClass.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['classes'] =
         classes != null ? classes!.map((v) => v?.toJson()).toList() : null;
     return data;
@@ -1497,7 +1499,7 @@ class OrgCitizen {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['ocId'] = ocId;
     data['createdAt'] = createdAt;
     data['ocName'] = ocName;
@@ -1518,7 +1520,7 @@ class Ppm {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['fk_pcid'] = fkpcid;
     return data;
@@ -1539,7 +1541,7 @@ class PropertyValue {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['propKey'] = propKey;
     data['propValue'] = propValue;
@@ -1559,7 +1561,7 @@ class RegionsList {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['region_name'] = regionname;
     return data;
@@ -1607,7 +1609,7 @@ class RelationStyle {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['thickness'] = thickness;
     data['color'] = color;
@@ -1633,7 +1635,7 @@ class Root {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['model'] = model!.toJson();
     return data;
   }
@@ -1653,7 +1655,7 @@ class SoftContainerLU {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['softSys_id'] = softSysid;
     data['containers_id'] = containersid;
@@ -1677,7 +1679,7 @@ class SoftSysTeamComb {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['techGraphName'] = techGraphName;
     data['softSys_id'] = softSysid;
@@ -1687,6 +1689,7 @@ class SoftSysTeamComb {
 }
 
 class SoftwareSystem {
+  late String softwareSystemJson;
   String? id;
   String? softSysIdent;
   String? softSysName;
@@ -1724,7 +1727,7 @@ class SoftwareSystem {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['softSysIdent'] = softSysIdent;
     data['softSysName'] = softSysName;
@@ -1736,6 +1739,31 @@ class SoftwareSystem {
     data['softSysPerspectiveDesc'] = softSysPerspectiveDesc;
     data['softC4ModelTag'] = softC4ModelTag;
     return data;
+  }
+
+  Future<bool> loadSoftwareSystem() async {
+    bool status = false;
+
+    return status;
+  }
+
+  saveSoftwareSystem() {
+    Map<String, String> softwareSystemMap = {
+      'id': id!,
+      'softSysIdent': softSysIdent!,
+      'softSysName': softSysName!,
+      'softSysDesc': softSysDesc!,
+      'softSysTagList': softSysTagList!,
+      'softSysProperties': softSysProperties!,
+      'softSysGroup': softSysGroup!,
+      'softSysPerspective': softSysPerspective!,
+      'softSysPerspectiveDesc': softSysPerspectiveDesc!,
+      'softC4ModelTag': softC4ModelTag!,
+    };
+
+    softwareSystemJson = jsonEncode(softwareSystemMap);
+
+    // TODO: Create save to database....
   }
 }
 
@@ -1751,7 +1779,7 @@ class SteLead {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['fk_pcid'] = fkpcid;
     return data;
@@ -1796,7 +1824,7 @@ class StructurizrMain {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['structDashBrd_id'] = structDashBrdid;
     data['name'] = name;
@@ -1855,7 +1883,7 @@ class StructView {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['viewType'] = viewType;
     data['viewKey'] = viewKey;
@@ -1886,7 +1914,7 @@ class Team {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['createdAt'] = createdAt;
     data['teamName'] = teamName;
@@ -1906,7 +1934,7 @@ class Teamsmember {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['team_id'] = teamid;
     data['member_id'] = memberid;
     return data;
@@ -1929,7 +1957,7 @@ class ViewImage {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['vi_url'] = viurl;
     data['vi_keywords'] = vikeywords;
